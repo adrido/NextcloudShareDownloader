@@ -7,6 +7,7 @@ project(NextcloudShareDownloader
         LANGUAGES CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+include(GenerateProductVersion)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -52,6 +53,8 @@ add_executable(Nextxcloudsync WIN32
   downloadwidget.cpp
   downloadwidget.h
   Resource.qrc
+  ${QM_FILES}
+  ${RESOURCE_FILE}
 )
 
 target_link_libraries(Nextxcloudsync PRIVATE

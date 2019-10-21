@@ -7,6 +7,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QString>
+#include <QTimer>
 
 void MainWindow::initStatusbar()
 {
@@ -14,7 +15,7 @@ void MainWindow::initStatusbar()
     statusLabelRemoteDirs = new QLabel(this);
     statusLabelRemoteFiles = new QLabel(this);
 
-    statusProgressBar->setFixedHeight(ui->statusbar->height());
+    statusProgressBar->setFixedHeight(ui->statusbar->height()-4);
 
     statusLabelRemoteDirs->setText(statusLabelRemoteDirsText.arg('?'));
     statusLabelRemoteFiles->setText(statusLabelRemoteFilesText.arg('?'));
@@ -73,7 +74,7 @@ void MainWindow::fileDownloaded()
     filesDownloaded ++;
     statusProgressBar->setValue(filesDownloaded);
     if(filesDownloaded >= filesToDownload.length() )
-        fileDownloadCompleted();
+        QTimer::singleShot(1, this, &MainWindow::fileDownloadCompleted);//fileDownloadCompleted();
 }
 
 void MainWindow::dirDownloadCompleted(){
@@ -87,8 +88,8 @@ void MainWindow::dirDownloadCompleted(){
         }
     }
     if(filesToDownload.length() >=1){
-        auto button = QMessageBox::question(this,"Download",
-                              QString("There are %1 Files that are not found. \n"
+        auto button = QMessageBox::question(this, tr("Download"),
+                              tr("There are %1 Files that are not found. \n"
                                       "Do you want to Download?").arg(filesToDownload.length())
                               );
         if(button == QMessageBox::Yes){
@@ -96,8 +97,7 @@ void MainWindow::dirDownloadCompleted(){
         }
     }
     else{
-            QMessageBox::information(this, "Done", "All files are up to date.");
-            ui->statusbar->showMessage("Ready");
+            QMessageBox::information(this, tr("Done"), tr("All files are up to date."));
             reset();
     }
 
@@ -105,8 +105,8 @@ void MainWindow::dirDownloadCompleted(){
 }
 
 void MainWindow::fileDownloadCompleted(){
-    QMessageBox::information(this,"Download",
-                          QString("Download completed. \n")
+    QMessageBox::information(this, tr("Download"),
+                          tr("Download completed. \n")
                           );
     reset();
 }
@@ -142,7 +142,7 @@ void MainWindow::startRefresh()
 {
     const QUrl url = QUrl(ui->lineEditUrl->text(),QUrl::ParsingMode::StrictMode);
     if(url.isEmpty() || !url.isValid() || url.isLocalFile() || url.isRelative()){
-        QMessageBox::information(this, "Invalid URL", "Please enter a valid URL.");
+        QMessageBox::information(this, tr("Invalid URL"), tr("Please enter a valid URL."));
         return;
     }
     ui->actionRefresh->setDisabled(true);
@@ -158,7 +158,7 @@ void MainWindow::on_actionRefresh_triggered()
 
 void MainWindow::reset()
 {
-    ui->statusbar->showMessage("Ready");
+    ui->statusbar->showMessage(tr("Ready"));
     filesToDownload.clear();
     filesDownloaded = 0;
     dirIter->reset();
@@ -167,9 +167,9 @@ void MainWindow::reset()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    const QString aboutText = "Nexctloud share donwloader\n";
+    const QString aboutText = tr("Nexctloud share downloader");
 
-    QMessageBox::about(this,"About",aboutText);
+    QMessageBox::about(this, tr("About"), aboutText);
 }
 
 void MainWindow::writeSettings()
