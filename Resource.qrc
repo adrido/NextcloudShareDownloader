@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/Icon.svg</file>
+        <file>icons/icon.png</file>
+        <file alias="icon">icons/Cloud.svg</file>
+        <file>icons/status-error.svg</file>
+        <file>icons/status-loading.svg</file>
+        <file>icons/status-ok.png</file>
+        <file>icons/status-ok.svg</file>
+        <file alias="cloud-reload">icons/cloud-reload.svg</file>
+        <file>icons/cloud-reload.png</file>
+    </qresource>
+</RCC>
