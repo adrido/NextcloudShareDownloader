@@ -77,6 +77,12 @@ void MainWindow::fileDownloaded()
 }
 
 void MainWindow::dirDownloadCompleted(){
+    if(dirIter->getHaveErrors())
+    {
+        reset();
+        return;
+    }
+
     QStringList remoteFiles = dirIter->getFileList();
     for(const QString& file : remoteFiles){
         QString localFileName = file.section('/',3); //Removes /index.php/webdav/

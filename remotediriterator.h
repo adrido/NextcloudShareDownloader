@@ -15,13 +15,16 @@ class RemoteDirIterator : public QObject
     MessageLogger *messageLogger;
     int maxDownloads = 0;
     int maxDownloadsCompleted = 0;
+    bool haveErrors = false;
 public:
     explicit RemoteDirIterator( MessageLogger *messageLogger, QObject *parent = nullptr);
     void setRootUrl(const QUrl &url);
     void downloadDir(const QUrl &url);
 
-    QStringList getFileList();
+    QStringList getFileList() const;
     void reset();
+    bool getHaveErrors() const;
+
 signals:
     void downloadCompleted();
     void statusChanged(QString text);
@@ -30,7 +33,6 @@ signals:
 
 public slots:
     void downloadFinished(QNetworkReply *reply);
-    void slotError(QNetworkReply::NetworkError code);
     void sslErrors(const QList<QSslError> &errors);
 };
 

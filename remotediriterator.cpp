@@ -1,6 +1,13 @@
 #include "remotediriterator.h"
 #include "propfindparser.h"
 
+#include <QMessageBox>
+
+bool RemoteDirIterator::getHaveErrors() const
+{
+    return haveErrors;
+}
+
 RemoteDirIterator::RemoteDirIterator(MessageLogger *logger, QObject *parent) : QObject(parent)
 {
     manager = new QNetworkAccessManager(this);
@@ -25,8 +32,7 @@ void RemoteDirIterator::downloadDir(const QUrl &url)
 
     connect(reply, SIGNAL(sslErrors(QList<QSslError>)),
             SLOT(sslErrors(QList<QSslError>)));
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, &RemoteDirIterator::slotError);
+
     currentDownloads.append(reply);
 
     // Increment downloads for progressbar;
@@ -37,7 +43,10 @@ void RemoteDirIterator::downloadDir(const QUrl &url)
 void RemoteDirIterator::downloadFinished(QNetworkReply *reply)
 {
     if (reply->error()) {
+        haveErrors = true;
         qDebug() << reply->errorString();
+        QMessageBox::critical(nullptr, tr("Network Error: %1").arg(reply->error()), reply->errorString());
+
     } else {
         QByteArray a = reply->readAll();
         PropFindParser p(a);
@@ -69,18 +78,14 @@ void RemoteDirIterator::downloadFinished(QNetworkReply *reply)
     }
 }
 
-void RemoteDirIterator::slotError(QNetworkReply::NetworkError code)
-{
-    qDebug()<< "Error "<<code;
-}
-
 void RemoteDirIterator::sslErrors(const QList<QSslError> &errors)
 {
     for (const QSslError &error : errors)
         qDebug() << "SSL error: " << error.errorString();
 }
 
-QStringList RemoteDirIterator::getFileList(){
+QStringList RemoteDirIterator::getFileList() const
+{
     return files;
 }
 
