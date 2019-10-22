@@ -77,9 +77,6 @@ set(CMAKE_INSTALL_SYSTEM_RUNTIME_DESTINATION ".")
 include(InstallRequiredSystemLibraries)
 install(TARGETS Nextxcloudsync DESTINATION "./")
 
-
-
-
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Core.dll
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Gui.dll
@@ -96,6 +93,15 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/translations/ DESTINATION translat
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/iconengines/ DESTINATION iconengines/)
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/imageformats/ DESTINATION imageformats/)
 
+# CPack Variables
+set(CPACK_PACKAGE_VENDOR "Adrido")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE.txt")
+set(CPACK_PACKAGE_EXECUTABLES Nextxcloudsync Nextxcloudsync)
+
+set(CPACK_WIX_UPGRADE_GUID FEFC0CF0-0226-4DE1-BBCF-E6515C338919)
+set(CPACK_WIX_PRODUCT_ICON "${CMAKE_SOURCE_DIR}/icons/Icon.ico")
+set(CPACK_WIX_PROGRAM_MENU_FOLDER ".") # No Program menu folder
+set(CPACK_WIX_PROPERTY_ARPHELPLINK "https://github.com/adrido/NextcloudShareDownloader/issues")
 
 include(CPack)
 
