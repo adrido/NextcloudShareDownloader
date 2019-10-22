@@ -2,16 +2,12 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>911</width>
-    <height>525</height>
-   </rect>
-  </property>
   <property name="windowTitle">
    <string/>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resource.qrc">
+    <normaloff>:/Icon</normaloff>:/Icon</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -72,8 +68,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>887</width>
-         <height>286</height>
+         <width>307</width>
+         <height>85</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3"/>
@@ -87,7 +83,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>911</width>
+     <width>331</width>
      <height>26</height>
     </rect>
    </property>
@@ -118,9 +114,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
    <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
@@ -143,7 +136,7 @@
   <action name="actionRefresh">
    <property name="icon">
     <iconset resource="Resource.qrc">
-     <normaloff>:/cloud-reload</normaloff>:/cloud-reload</iconset>
+     <normaloff>:/reload</normaloff>:/reload</iconset>
    </property>
    <property name="text">
     <string>Reload</string>

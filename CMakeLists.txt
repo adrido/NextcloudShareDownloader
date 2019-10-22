@@ -31,7 +31,7 @@ qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 generate_product_version(RESOURCE_FILE
      NAME ${PROJECT_NAME}
-     ICON ${CMAKE_SOURCE_DIR}/icons/Cloud.ico
+     ICON ${CMAKE_SOURCE_DIR}/icons/Icon.ico
      VERSION_MAJOR ${PROJECT_VERSION_MAJOR}
      VERSION_MINOR ${PROJECT_VERSION_MINOR}
      VERSION_PATCH ${PROJECT_VERSION_PATCH}
@@ -93,6 +93,8 @@ install(FILES
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/platforms/ DESTINATION platforms/ )
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/styles/ DESTINATION styles/ )
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/translations/ DESTINATION translations/ )
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/iconengines/ DESTINATION iconengines/)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/imageformats/ DESTINATION imageformats/)
 
 
 include(CPack)

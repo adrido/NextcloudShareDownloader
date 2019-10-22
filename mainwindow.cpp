@@ -30,7 +30,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowIcon(QIcon(":/icons/Icon.svg"));
 
     dirIter = new RemoteDirIterator(&messageLogger,this);
 

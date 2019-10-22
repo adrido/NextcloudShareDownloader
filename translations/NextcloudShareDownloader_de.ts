@@ -4,138 +4,133 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="21"/>
+        <location filename="../mainwindow.ui" line="17"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="27"/>
+        <location filename="../mainwindow.ui" line="23"/>
         <source>Example: https://myserver.de/s/blahblah</source>
         <translation>Zum Beispiel: https:myserver.de/s/blahblah</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="34"/>
+        <location filename="../mainwindow.ui" line="30"/>
         <source>Example: C://Users/user/Documents/Drive</source>
         <translation>Zum Beispiel: Example: C://Users/user/Documents/Drive</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="41"/>
+        <location filename="../mainwindow.ui" line="37"/>
         <source>URL:</source>
         <translation>URL:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="48"/>
+        <location filename="../mainwindow.ui" line="44"/>
         <source>Folder:</source>
         <translation>Ordner:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="55"/>
+        <location filename="../mainwindow.ui" line="51"/>
         <source>Browse</source>
         <translation>Durchsuchen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="96"/>
+        <location filename="../mainwindow.ui" line="92"/>
         <source>&amp;File</source>
         <translation>&amp;Datei</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="105"/>
+        <location filename="../mainwindow.ui" line="101"/>
         <source>&amp;Action</source>
         <translation>&amp;Aktionen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="111"/>
+        <location filename="../mainwindow.ui" line="107"/>
         <source>&amp;Help</source>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="122"/>
-        <source>toolBar</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="137"/>
+        <location filename="../mainwindow.ui" line="130"/>
         <source>E&amp;xit</source>
         <translation>&amp;Schließen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="140"/>
+        <location filename="../mainwindow.ui" line="133"/>
         <source>Esc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="149"/>
-        <location filename="../mainwindow.ui" line="152"/>
+        <location filename="../mainwindow.ui" line="142"/>
+        <location filename="../mainwindow.ui" line="145"/>
         <source>Reload</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.ui" line="148"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="160"/>
-        <location filename="../mainwindow.cpp" line="172"/>
+        <location filename="../mainwindow.ui" line="153"/>
+        <location filename="../mainwindow.cpp" line="171"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="165"/>
+        <location filename="../mainwindow.ui" line="158"/>
         <source>Open Folder</source>
         <translation>Öffne Ordner</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="170"/>
+        <location filename="../mainwindow.ui" line="163"/>
         <source>Open Url</source>
         <translation>Öffne Url</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="91"/>
-        <location filename="../mainwindow.cpp" line="108"/>
+        <location filename="../mainwindow.cpp" line="90"/>
+        <location filename="../mainwindow.cpp" line="107"/>
         <source>Download</source>
         <translation>Herunterladen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="92"/>
+        <location filename="../mainwindow.cpp" line="91"/>
         <source>There are %1 Files that are not found. 
 Do you want to Download?</source>
         <translation>Es wurden %1 Dateien nicht gefunden.
 Möchten Sie diese Herunterladen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="100"/>
+        <location filename="../mainwindow.cpp" line="99"/>
         <source>Done</source>
         <translation>Fertig</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="100"/>
+        <location filename="../mainwindow.cpp" line="99"/>
         <source>All files are up to date.</source>
         <translation>Alle Dateien sind aktuell.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="108"/>
         <source>Download completed. 
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="145"/>
+        <location filename="../mainwindow.cpp" line="144"/>
         <source>Invalid URL</source>
         <translation>Ungültige URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="145"/>
+        <location filename="../mainwindow.cpp" line="144"/>
         <source>Please enter a valid URL.</source>
         <translation>Bitte eine Gültige URL eingeben.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="161"/>
+        <location filename="../mainwindow.cpp" line="160"/>
         <source>Ready</source>
         <translation>Bereit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="170"/>
+        <location filename="../mainwindow.cpp" line="169"/>
         <source>Nexctloud share downloader</source>
         <translation></translation>
     </message>

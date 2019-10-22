@@ -18,7 +18,7 @@ DownloadWidget::DownloadWidget(const QString &rootDir, QNetworkReply *reply, QWi
 
     label = new QLabel();
     icon = new QLabel();
-    icon->setPixmap(QPixmap(":/icons/status-loading.svg"));
+    icon->setPixmap(QPixmap(":/icons/status-loading.png"));
     label->setText(reply->url().toDisplayString().section('/',5));
     buttonOpenFile = new QPushButton("Open");
     buttonOpenFile->setVisible(false);
@@ -60,13 +60,13 @@ void DownloadWidget::slotDownloadFinished(){
 
     if (reply->error()) {
         qDebug() << reply->errorString(); // TODO: Propper error handling
-        icon->setPixmap(QPixmap(":/icons/status-error.svg"));
+        icon->setPixmap(QPixmap(":/icons/status-error.png"));
     }
     else {
         if(emptyFile)
             saveToDisk(localFile.filePath(),reply);
 
-        icon->setPixmap(QPixmap(":/icons/status-ok.svg"));
+        icon->setPixmap(QPixmap(":/icons/status-ok.png"));
         buttonOpenFile->setVisible(true);
     }
 }

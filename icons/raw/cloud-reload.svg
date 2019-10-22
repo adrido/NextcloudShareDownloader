@@ -281,8 +281,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="22.4"
-     inkscape:cx="23.02724"
-     inkscape:cy="16.297034"
+     inkscape:cx="13.794023"
+     inkscape:cy="17.266832"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -340,8 +340,8 @@
      id="layer1"
      transform="translate(0,-288.53333)">
     <path
-       style="fill:#b9b9e1;fill-opacity:1;stroke:#000000;stroke-width:0.43285832;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 1.0918032,294.07768 h 6.2830602 c 1.1423747,-0.63262 1.4279684,-3.1631 -1.1423746,-3.1631 0,-2.8468 -3.998311,-2.8468 -3.998311,0 -2.57034296,0 -2.28474934,2.53048 -1.1423746,3.1631 z"
+       style="fill:#b9b9e1;fill-opacity:1;stroke:#000000;stroke-width:0.42333332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1.0751709,294.35416 h 6.3331624 c 1.1514842,-0.64272 1.4393553,-3.21361 -1.1514841,-3.21361 0,-2.89225 -4.0301942,-2.89225 -4.0301942,0 -2.59083938,0 -2.30296838,2.57089 -1.1514841,3.21361 z"
        id="path1919"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
@@ -349,13 +349,13 @@
        style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#2e0081;stroke-width:0.74533123;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.20000005;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker3968);paint-order:normal"
        id="path823"
        sodipodi:type="arc"
-       sodipodi:cx="4.0120206"
-       sodipodi:cy="293.71072"
+       sodipodi:cx="4.2416792"
+       sodipodi:cy="293.94492"
        sodipodi:rx="2.2984178"
        sodipodi:ry="2.2775714"
        sodipodi:start="5.9461782"
        sodipodi:end="4.8088275"
        sodipodi:open="true"
-       d="m 6.181149,292.95761 a 2.2984178,2.2775714 0 0 1 -0.8311525,2.605 2.2984178,2.2775714 0 0 1 -2.7564416,-0.0598 2.2984178,2.2775714 0 0 1 -0.7153313,-2.63854 2.2984178,2.2775714 0 0 1 2.3551096,-1.42054" />
+       d="m 6.4108076,293.1918 a 2.2984178,2.2775714 0 0 1 -0.8311525,2.605 2.2984178,2.2775714 0 0 1 -2.7564415,-0.0598 2.2984178,2.2775714 0 0 1 -0.7153314,-2.63853 2.2984178,2.2775714 0 0 1 2.3551096,-1.42055" />
   </g>
 </svg>
