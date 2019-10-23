@@ -81,6 +81,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Core.dll
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Gui.dll
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Network.dll
+    ${CMAKE_CURRENT_BINARY_DIR}/Qt5Svg.dll
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Widgets.dll
     ${CMAKE_CURRENT_BINARY_DIR}/Qt5Widgets.dll
     ${CMAKE_CURRENT_BINARY_DIR}/libcrypto-1_1-x64.dll

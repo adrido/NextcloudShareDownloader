@@ -53,6 +53,8 @@ private slots:
     void fileDownloaded();
     void on_pushButton_2_clicked();
 
+    void on_actionReport_Issue_triggered();
+
 private:
     Ui::MainWindow *ui;
     RemoteDirIterator *dirIter;

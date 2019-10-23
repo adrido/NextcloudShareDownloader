@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string/>
   </property>
@@ -68,8 +76,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>307</width>
-         <height>85</height>
+         <width>576</width>
+         <height>161</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3"/>
@@ -83,7 +91,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>331</width>
+     <width>600</width>
      <height>26</height>
     </rect>
    </property>
@@ -107,6 +115,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="actionAbout"/>
+    <addaction name="actionReport_Issue"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Action"/>
@@ -161,6 +170,11 @@
   <action name="actionOpen_Url">
    <property name="text">
     <string>Open Url</string>
+   </property>
+  </action>
+  <action name="actionReport_Issue">
+   <property name="text">
+    <string>Report Issue</string>
    </property>
   </action>
  </widget>

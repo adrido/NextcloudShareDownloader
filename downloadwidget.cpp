@@ -4,6 +4,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QMessageBox>
 #include <QSizePolicy>
 
 
@@ -20,8 +21,10 @@ DownloadWidget::DownloadWidget(const QString &rootDir, QNetworkReply *reply, QWi
     icon = new QLabel();
     icon->setPixmap(QPixmap(":/icons/status-loading.png"));
     label->setText(reply->url().toDisplayString().section('/',5));
-    buttonOpenFile = new QPushButton("Open");
+    buttonOpenFile = new QPushButton(tr("Open File"));
     buttonOpenFile->setVisible(false);
+    buttonErrorDescription = new QPushButton(tr("Error Description"));
+    buttonErrorDescription->setVisible(false);
 
     progress = new QProgressBar();
     progress->setRange(0,0);
@@ -33,10 +36,13 @@ DownloadWidget::DownloadWidget(const QString &rootDir, QNetworkReply *reply, QWi
             this, &DownloadWidget::slotReadyRead);
     connect(buttonOpenFile, &QPushButton::clicked,
             this, &DownloadWidget::openFile);
+    connect(buttonErrorDescription, &QPushButton::clicked,
+            this, &DownloadWidget::showErrorDescription);
 
     layout->setMargin(0);
     layout->addWidget(icon);
     layout->addWidget(label,1);
+    layout->addWidget(buttonErrorDescription);
     layout->addWidget(buttonOpenFile);
     layout->addWidget(progress);
     this->setLayout(layout);
@@ -46,6 +52,14 @@ DownloadWidget::DownloadWidget(const QString &rootDir, QNetworkReply *reply, QWi
 
 DownloadWidget::~DownloadWidget()
 {
+    // If the download is not finished, or the download failed
+    if(reply->isRunning()||reply->error()!=QNetworkReply::NoError){
+        reply->abort();
+        if(localFile.exists()){
+            // Delete the local (probably incomplete) file.
+            QFile::remove(localFile.filePath());
+        }
+    }
     reply->deleteLater();
 }
 
@@ -59,8 +73,13 @@ void DownloadWidget::slotDownloadFinished(){
     progress->setValue(100);
 
     if (reply->error()) {
+        buttonErrorDescription->setVisible(true);
         qDebug() << reply->errorString(); // TODO: Propper error handling
         icon->setPixmap(QPixmap(":/icons/status-error.png"));
+        if(localFile.exists()){
+            // Delete the local (probably incomplete) file.
+            QFile::remove(localFile.filePath());
+        }
     }
     else {
         if(emptyFile)
@@ -117,4 +136,9 @@ void DownloadWidget::mkPath() const
 void DownloadWidget::openFile() const
 {
     QDesktopServices::openUrl(QUrl("file:"+localFile.filePath()));
+}
+
+void DownloadWidget::showErrorDescription(){
+    QMessageBox::critical(static_cast<QWidget*>(this),tr("Network Error %1").arg(reply->error()),
+                          reply->errorString());
 }

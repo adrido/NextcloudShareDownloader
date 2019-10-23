@@ -2,88 +2,111 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
+    <name>DownloadWidget</name>
+    <message>
+        <location filename="../downloadwidget.cpp" line="24"/>
+        <source>Open File</source>
+        <translation>Datei Öffnen</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="26"/>
+        <source>Error Description</source>
+        <translation>Fehlerbeschreibung</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="142"/>
+        <source>Network Error %1</source>
+        <translation>Netzwerk Fehler: %1</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="17"/>
+        <location filename="../mainwindow.ui" line="25"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="23"/>
+        <location filename="../mainwindow.ui" line="31"/>
         <source>Example: https://myserver.de/s/blahblah</source>
         <translation>Zum Beispiel: https:myserver.de/s/blahblah</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="30"/>
+        <location filename="../mainwindow.ui" line="38"/>
         <source>Example: C://Users/user/Documents/Drive</source>
         <translation>Zum Beispiel: Example: C://Users/user/Documents/Drive</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="37"/>
+        <location filename="../mainwindow.ui" line="45"/>
         <source>URL:</source>
         <translation>URL:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="44"/>
+        <location filename="../mainwindow.ui" line="52"/>
         <source>Folder:</source>
         <translation>Ordner:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="51"/>
+        <location filename="../mainwindow.ui" line="59"/>
         <source>Browse</source>
         <translation>Durchsuchen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="92"/>
+        <location filename="../mainwindow.ui" line="100"/>
         <source>&amp;File</source>
         <translation>&amp;Datei</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="101"/>
+        <location filename="../mainwindow.ui" line="109"/>
         <source>&amp;Action</source>
         <translation>&amp;Aktionen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="107"/>
+        <location filename="../mainwindow.ui" line="115"/>
         <source>&amp;Help</source>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="130"/>
+        <location filename="../mainwindow.ui" line="139"/>
         <source>E&amp;xit</source>
         <translation>&amp;Schließen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="133"/>
+        <location filename="../mainwindow.ui" line="142"/>
         <source>Esc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="142"/>
-        <location filename="../mainwindow.ui" line="145"/>
+        <location filename="../mainwindow.ui" line="151"/>
+        <location filename="../mainwindow.ui" line="154"/>
         <source>Reload</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="148"/>
+        <location filename="../mainwindow.ui" line="157"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="153"/>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../mainwindow.ui" line="162"/>
+        <location filename="../mainwindow.cpp" line="181"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="158"/>
+        <location filename="../mainwindow.ui" line="167"/>
         <source>Open Folder</source>
         <translation>Öffne Ordner</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="163"/>
+        <location filename="../mainwindow.ui" line="172"/>
         <source>Open Url</source>
         <translation>Öffne Url</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="177"/>
+        <source>Report Issue</source>
+        <translation>Problem melden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="96"/>
@@ -133,6 +156,21 @@ Möchten Sie diese Herunterladen?</translation>
         <location filename="../mainwindow.cpp" line="175"/>
         <source>Nexctloud share downloader</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="176"/>
+        <source>Version: %1</source>
+        <translation>Version: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="177"/>
+        <source>Qt Version: %1</source>
+        <translation>Qt Version: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="178"/>
+        <source>Check for updates</source>
+        <translation>Auf Updates überprüfen</translation>
     </message>
 </context>
 <context>

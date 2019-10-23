@@ -172,7 +172,11 @@ void MainWindow::reset()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    const QString aboutText = tr("Nexctloud share downloader");
+    const QString aboutText = tr("Nexctloud share downloader")+"<br>"+
+            tr("Version: %1").arg(qApp->applicationVersion())+ "<br>"+
+            tr("Qt Version: %1").arg(qVersion())+"<br><br>"+
+            "<a href='https://github.com/adrido/NextcloudShareDownloader/releases'>"+tr("Check for updates")+"</a>";
+
 
     QMessageBox::about(this, tr("About"), aboutText);
 }
@@ -222,12 +226,7 @@ void MainWindow::on_actionOpen_Url_triggered()
 
 void MainWindow::slotLogMsg(MessageLogger::LogLevel ll, const QString& msg)
 {
-    if(ll == MessageLogger::LogLevel::File){
-        ui->statusbar->showMessage(msg);
-    }
-    else{
-        ui->statusbar->showMessage(msg);
-        }
+    ui->statusbar->showMessage(msg);
 }
 
 void MainWindow::slotFilesFound(int nFiles)
@@ -243,4 +242,9 @@ void MainWindow::on_pushButton_2_clicked()
                                                     | QFileDialog::DontResolveSymlinks);
     if(!dir.isEmpty())
         ui->lineEditDir->setText(dir);
+}
+
+void MainWindow::on_actionReport_Issue_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/adrido/NextcloudShareDownloader/issues"));
 }

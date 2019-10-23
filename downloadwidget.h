@@ -23,11 +23,13 @@ private slots:
     void slotDownloadFinished();
     void slotReadyRead();
     void openFile() const;
+    void showErrorDescription();
 private:
     QNetworkReply *reply;
     QLabel *icon;
     QLabel *label;
     QPushButton *buttonOpenFile;
+    QPushButton *buttonErrorDescription;
     QProgressBar *progress;
     const QString rootDir;
     QFileInfo localFile;
