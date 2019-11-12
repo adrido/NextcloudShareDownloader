@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(dirIter, SIGNAL(filesFoundChanged(int)),
             this, SLOT(slotFilesFound(int)));
     readSettings();
+    ui->actionDownload->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -100,6 +101,9 @@ void MainWindow::dirDownloadCompleted(){
         if(button == QMessageBox::Yes){
             startDownload();
         }
+        else{
+            ui->actionDownload->setEnabled(true);
+        }
     }
     else{
             QMessageBox::information(this, tr("Done"), tr("All files are up to date."));
@@ -111,7 +115,7 @@ void MainWindow::dirDownloadCompleted(){
 
 void MainWindow::fileDownloadCompleted(){
     QMessageBox::information(this, tr("Download"),
-                          tr("Download completed. \n")
+                          tr("Download completed.")
                           );
     reset();
 }
@@ -151,6 +155,7 @@ void MainWindow::startRefresh()
         return;
     }
     ui->actionRefresh->setDisabled(true);
+    ui->actionDownload->setEnabled(false);
     const QUrl webdavUrl = toWebDavUrl(url);
     dirIter->setRootUrl(webdavUrl);
     dirIter->downloadDir(webdavUrl);
@@ -168,6 +173,7 @@ void MainWindow::reset()
     filesDownloaded = 0;
     dirIter->reset();
     ui->actionRefresh->setDisabled(false);
+    ui->actionDownload->setEnabled(false);
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -247,4 +253,9 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_actionReport_Issue_triggered()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/adrido/NextcloudShareDownloader/issues"));
+}
+
+void MainWindow::on_actionDownload_triggered()
+{
+    startDownload();
 }

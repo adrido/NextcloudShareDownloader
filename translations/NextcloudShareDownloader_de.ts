@@ -52,123 +52,128 @@
         <translation>Durchsuchen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="100"/>
+        <location filename="../mainwindow.ui" line="114"/>
         <source>&amp;File</source>
         <translation>&amp;Datei</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="109"/>
+        <location filename="../mainwindow.ui" line="123"/>
         <source>&amp;Action</source>
         <translation>&amp;Aktionen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="115"/>
+        <location filename="../mainwindow.ui" line="129"/>
         <source>&amp;Help</source>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="139"/>
+        <location filename="../mainwindow.ui" line="154"/>
         <source>E&amp;xit</source>
         <translation>&amp;Schließen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="142"/>
+        <location filename="../mainwindow.ui" line="157"/>
         <source>Esc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="151"/>
-        <location filename="../mainwindow.ui" line="154"/>
+        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.ui" line="169"/>
         <source>Reload</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="157"/>
+        <location filename="../mainwindow.ui" line="172"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="162"/>
-        <location filename="../mainwindow.cpp" line="181"/>
+        <location filename="../mainwindow.ui" line="177"/>
+        <location filename="../mainwindow.cpp" line="187"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="167"/>
+        <location filename="../mainwindow.ui" line="182"/>
         <source>Open Folder</source>
         <translation>Öffne Ordner</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="172"/>
+        <location filename="../mainwindow.ui" line="187"/>
         <source>Open Url</source>
         <translation>Öffne Url</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="177"/>
+        <location filename="../mainwindow.ui" line="192"/>
         <source>Report Issue</source>
         <translation>Problem melden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="96"/>
-        <location filename="../mainwindow.cpp" line="113"/>
+        <location filename="../mainwindow.ui" line="201"/>
+        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="117"/>
         <source>Download</source>
         <translation>Herunterladen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="98"/>
         <source>There are %1 Files that are not found. 
 Do you want to Download?</source>
         <translation>Es wurden %1 Dateien nicht gefunden.
 Möchten Sie diese Herunterladen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
+        <location filename="../mainwindow.cpp" line="109"/>
         <source>Done</source>
         <translation>Fertig</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
+        <location filename="../mainwindow.cpp" line="109"/>
         <source>All files are up to date.</source>
         <translation>Alle Dateien sind aktuell.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="114"/>
         <source>Download completed. 
 </source>
-        <translation></translation>
+        <translation type="obsolete">Herunterladen abgeschlossen. \n</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="150"/>
+        <location filename="../mainwindow.cpp" line="118"/>
+        <source>Download completed.</source>
+        <translation>Herunterladen abgeschlossen.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="154"/>
         <source>Invalid URL</source>
         <translation>Ungültige URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="150"/>
+        <location filename="../mainwindow.cpp" line="154"/>
         <source>Please enter a valid URL.</source>
         <translation>Bitte eine Gültige URL eingeben.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="166"/>
+        <location filename="../mainwindow.cpp" line="171"/>
         <source>Ready</source>
         <translation>Bereit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="175"/>
+        <location filename="../mainwindow.cpp" line="181"/>
         <source>Nexctloud share downloader</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="176"/>
+        <location filename="../mainwindow.cpp" line="182"/>
         <source>Version: %1</source>
         <translation>Version: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../mainwindow.cpp" line="183"/>
         <source>Qt Version: %1</source>
         <translation>Qt Version: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="178"/>
+        <location filename="../mainwindow.cpp" line="184"/>
         <source>Check for updates</source>
         <translation>Auf Updates überprüfen</translation>
     </message>

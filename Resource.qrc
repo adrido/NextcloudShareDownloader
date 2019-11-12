@@ -5,5 +5,6 @@
         <file alias="Icon">icons/Icon.svg</file>
         <file alias="status-error">icons/status-error.png</file>
         <file alias="status-loading">icons/status-loading.png</file>
+        <file alias="download">icons/cloud-download.png</file>
     </qresource>
 </RCC>

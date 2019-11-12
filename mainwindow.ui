@@ -80,7 +80,21 @@
          <height>161</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -133,6 +147,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionRefresh"/>
+   <addaction name="actionDownload"/>
   </widget>
   <action name="actionE_xit">
    <property name="text">
@@ -175,6 +190,15 @@
   <action name="actionReport_Issue">
    <property name="text">
     <string>Report Issue</string>
+   </property>
+  </action>
+  <action name="actionDownload">
+   <property name="icon">
+    <iconset resource="Resource.qrc">
+     <normaloff>:/download</normaloff>:/download</iconset>
+   </property>
+   <property name="text">
+    <string>Download</string>
    </property>
   </action>
  </widget>

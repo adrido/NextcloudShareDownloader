@@ -55,6 +55,8 @@ private slots:
 
     void on_actionReport_Issue_triggered();
 
+    void on_actionDownload_triggered();
+
 private:
     Ui::MainWindow *ui;
     RemoteDirIterator *dirIter;
