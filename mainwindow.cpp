@@ -95,9 +95,9 @@ void MainWindow::dirDownloadCompleted(){
     }
     if(filesToDownload.length() >=1){
         auto button = QMessageBox::question(this, tr("Download"),
-                              tr("There are %1 Files that are not found. \n"
-                                      "Do you want to Download?").arg(filesToDownload.length())
-                              );
+                                            tr("There are %n File(s) that are not found. \n"
+                                               "Do you want to Download?", "", filesToDownload.length())
+                                            );
         if(button == QMessageBox::Yes){
             startDownload();
         }
@@ -149,13 +149,14 @@ QString MainWindow::getLocalDir()
 
 void MainWindow::startRefresh()
 {
+    reset();
     const QUrl url = QUrl(ui->lineEditUrl->text(),QUrl::ParsingMode::StrictMode);
     if(url.isEmpty() || !url.isValid() || url.isLocalFile() || url.isRelative()){
         QMessageBox::information(this, tr("Invalid URL"), tr("Please enter a valid URL."));
         return;
     }
     ui->actionRefresh->setDisabled(true);
-    ui->actionDownload->setEnabled(false);
+    ui->actionDownload->setDisabled(true);
     const QUrl webdavUrl = toWebDavUrl(url);
     dirIter->setRootUrl(webdavUrl);
     dirIter->downloadDir(webdavUrl);
