@@ -13,7 +13,7 @@ class DownloadWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DownloadWidget(const QString &rootDir, QNetworkReply *reply, QWidget *parent = nullptr);
+    explicit DownloadWidget(const QString &rootDir, QNetworkAccessManager *networkAcessManager, QNetworkReply *reply, QWidget *parent = nullptr);
     ~DownloadWidget();
 signals:
 
@@ -37,6 +37,7 @@ private:
     bool saveToDisk(const QString &filename, QIODevice *data);
     bool savePartToDisk(const QString &filename, QIODevice *data);
     void mkPath() const;
+    QNetworkAccessManager *networkAcessManager;
 };
 
 #endif // DOWNLOADWIDGET_H

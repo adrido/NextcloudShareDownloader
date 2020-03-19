@@ -76,8 +76,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>576</width>
-         <height>161</height>
+         <width>580</width>
+         <height>177</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3"/>
@@ -134,6 +134,7 @@
    </attribute>
    <addaction name="actionRefresh"/>
    <addaction name="actionDownload"/>
+   <addaction name="actionEditBlackList"/>
   </widget>
   <action name="actionE_xit">
    <property name="text">
@@ -185,6 +186,18 @@
    </property>
    <property name="text">
     <string>Download</string>
+   </property>
+  </action>
+  <action name="actionEditBlackList">
+   <property name="icon">
+    <iconset resource="Resource.qrc">
+     <normaloff>:/blacklist</normaloff>:/blacklist</iconset>
+   </property>
+   <property name="text">
+    <string>Black List</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Black List</string>
    </property>
   </action>
  </widget>

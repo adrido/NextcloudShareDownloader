@@ -32,6 +32,7 @@ public:
     
     void initStatusbar();
 
+    void readBlackList();
 public slots:
     void dirDownloadCompleted();
     void fileDownloadCompleted();
@@ -57,6 +58,8 @@ private slots:
 
     void on_actionDownload_triggered();
 
+    void on_actionEditBlackList_triggered();
+
 private:
     Ui::MainWindow *ui;
     RemoteDirIterator *dirIter;
@@ -67,6 +70,7 @@ private:
     const QString statusLabelRemoteFilesText = "📄 %1";
     void reset();
     QStringList filesToDownload;
+    QStringList blackList;
     int filesDownloaded = 0;
     QSettings settings;
     MessageLogger messageLogger;

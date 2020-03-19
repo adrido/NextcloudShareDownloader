@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(NextcloudShareDownloader
-        VERSION 1.1
+        VERSION 1.2
         DESCRIPTION "Downloads / Syncs files from a Nextclound share"
         HOMEPAGE_URL "https://github.com/adrido/NextcloudShareDownloader"
         LANGUAGES CXX)

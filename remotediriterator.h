@@ -16,6 +16,7 @@ class RemoteDirIterator : public QObject
     int maxDownloads = 0;
     int maxDownloadsCompleted = 0;
     bool haveErrors = false;
+    QStringList blackList;
 public:
     explicit RemoteDirIterator( MessageLogger *messageLogger, QObject *parent = nullptr);
     void setRootUrl(const QUrl &url);
@@ -24,6 +25,8 @@ public:
     QStringList getFileList() const;
     void reset();
     bool getHaveErrors() const;
+    void setBlackList(const QStringList &list);
+    bool isBlackListed(const QString &s);
 
 signals:
     void downloadCompleted();

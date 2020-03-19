@@ -62,7 +62,7 @@ void MainWindow::startDownload()
         QUrl url = QUrl(webdavUrl);
         url.setPath(webdavUrl.path()+file);
         auto reply = nwm->get(QNetworkRequest(url));
-        auto dlw = new DownloadWidget(getLocalDir(), reply);
+        auto dlw = new DownloadWidget(getLocalDir(), nwm, reply);
         ui->scrollAreaWidgetContents->layout()->addWidget(dlw);
     }
     connect(nwm, &QNetworkAccessManager::finished,
@@ -150,6 +150,7 @@ QString MainWindow::getLocalDir()
 void MainWindow::startRefresh()
 {
     reset();
+    readBlackList();
     const QUrl url = QUrl(ui->lineEditUrl->text(),QUrl::ParsingMode::StrictMode);
     if(url.isEmpty() || !url.isValid() || url.isLocalFile() || url.isRelative()){
         QMessageBox::information(this, tr("Invalid URL"), tr("Please enter a valid URL."));
@@ -158,6 +159,7 @@ void MainWindow::startRefresh()
     ui->actionRefresh->setDisabled(true);
     ui->actionDownload->setDisabled(true);
     const QUrl webdavUrl = toWebDavUrl(url);
+    dirIter->setBlackList(blackList);
     dirIter->setRootUrl(webdavUrl);
     dirIter->downloadDir(webdavUrl);
 }
@@ -259,4 +261,49 @@ void MainWindow::on_actionReport_Issue_triggered()
 void MainWindow::on_actionDownload_triggered()
 {
     startDownload();
+}
+
+void MainWindow::readBlackList()
+{
+    blackList.clear();
+    QString dir = ui->lineEditDir->text();
+    QFile fileBlackList(dir + "/BlackList.txt");
+    if(fileBlackList.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream stream( &fileBlackList );
+        while(!stream.atEnd()){
+            QString line = stream.readLine();
+
+            // Solange die Zeile nicht mit # beginnt oder leer ist
+            if(line.startsWith('#') || line.isEmpty()){
+                continue;
+            }
+            blackList.append(line);
+            qDebug() << blackList;
+        }
+    }
+}
+
+
+void MainWindow::on_actionEditBlackList_triggered()
+{
+    QString dir = ui->lineEditDir->text();
+    QFile fileBlackList(dir + "/BlackList.txt");
+
+    // Falls es diese datei nicht gibt
+    if(!fileBlackList.exists())
+    {
+        if(fileBlackList.open(QFile::WriteOnly | QFile::Text))
+        {
+            QTextStream stream( &fileBlackList );
+                stream << tr("# This is the blacklist of %1.").arg(qAppName()) << endl
+                       << tr("# You can write the name of the file you want to ignore to this file.") << endl
+                       << tr("# One entry per line.") << endl
+                       << tr("# Lines that start with a # are ignored.") << endl;
+                fileBlackList.close();
+        }
+
+    }
+    QDesktopServices::openUrl(QUrl(fileBlackList.fileName()));
+
 }

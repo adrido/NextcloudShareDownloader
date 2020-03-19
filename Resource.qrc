@@ -6,5 +6,6 @@
         <file alias="status-error">icons/status-error.png</file>
         <file alias="status-loading">icons/status-loading.png</file>
         <file alias="download">icons/cloud-download.png</file>
+        <file alias="blacklist">icons/blacklist.png</file>
     </qresource>
 </RCC>

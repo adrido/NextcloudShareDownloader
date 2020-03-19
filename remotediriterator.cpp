@@ -8,6 +8,23 @@ bool RemoteDirIterator::getHaveErrors() const
     return haveErrors;
 }
 
+void RemoteDirIterator::setBlackList(const QStringList &list)
+{
+    blackList = list;
+}
+
+bool RemoteDirIterator::isBlackListed(const QString &name)
+{
+    for(const QString &s : blackList)
+    {
+        if(name.contains(s))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 RemoteDirIterator::RemoteDirIterator(MessageLogger *logger, QObject *parent) : QObject(parent)
 {
     manager = new QNetworkAccessManager(this);
@@ -52,8 +69,16 @@ void RemoteDirIterator::downloadFinished(QNetworkReply *reply)
         PropFindParser p(a);
         QList<PropItem> list = p.getList();
         list.pop_front(); // Remove first Item (its the same dir)
-        for(PropItem item : list){
-            if(item.isDir()){
+        for(PropItem item : list)
+        {
+            if(isBlackListed(item.href))
+            {
+                qDebug()<< "is blacklisted" << item.getName();
+                continue; // no need to download
+            }
+            if(item.isDir())
+            {
+
                 QUrl url(rootUrl);
                 url.setPath(item.href);
                 downloadDir(url);

@@ -7,8 +7,11 @@
 #include <QMessageBox>
 #include <QSizePolicy>
 
+//QNetworkAccessManager *DownloadWidget::networkAcessManager = new QNetworkAccessManager();
 
-DownloadWidget::DownloadWidget(const QString &rootDir, QNetworkReply *reply, QWidget *parent) :
+
+
+DownloadWidget::DownloadWidget(const QString &rootDir,QNetworkAccessManager *networkAcessManager, QNetworkReply *reply, QWidget *parent) :
     QWidget(parent), reply(reply), rootDir(rootDir)
 {
     QUrl url = reply->url();
